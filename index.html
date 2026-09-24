@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +14,7 @@
             background-attachment: fixed;
             color: #4a3e3d; 
             margin: 0; 
-            padding: 20px; 
+            8padding: 20px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -101,11 +102,4 @@ function enviarWhatsApp() {
         return;
     }
 
-    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Huésped:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entradaInput)}%0A📆 *Salida:* ${encodeURIComponent(salidaInput)}%0A💬 *Nota:* ${encodeURIComponent(msgEspecial)}%0A%0A📋 *Estado:* ⏳ PENDIENTE`;
-    
-    window.location.href = `https://whatsapp.com{texto}`;
-}
-</script>
-
-</body>
-</html>
+    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Huésped:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entradaInput)}%0A📆 *Salida:* ${encodeURIComponent(salidaInput)}%0A💬 *Nota:*
