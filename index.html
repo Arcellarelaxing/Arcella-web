@@ -2,12 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcella Relaxing | Reservas de Departamento</title>
+    <title>Arcella Relaxing | Reservas</title>
     <style>
         body { 
             font-family: 'Helvetica Neue', Arial, sans-serif; 
@@ -24,28 +20,27 @@
             min-height: 100vh; 
         }
         .card { 
-            background: rgba(255, 255, 255, 0.92); 
-            padding: 30px; 
+            background: rgba(255, 255, 255, 0.96); 
+            padding: 25px; 
             border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
-            max-width: 440px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
+            max-width: 400px; 
             width: 100%; 
             text-align: center; 
             border: 1px solid #ebdccb; 
             box-sizing: border-box; 
+            margin: 10px auto;
         }
-        h1 { color: #5a4b49; font-size: 26px; margin-bottom: 5px; font-weight: 600; letter-spacing: 0.5px; }
-        p { color: #7a6e67; font-size: 14px; margin-bottom: 25px; font-weight: 500; }
-        label { display: block; text-align: left; margin: 14px 0 6px; font-weight: 600; font-size: 13px; color: #5a4b49; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 10px; border: 1px solid #ebdccb; border-radius: 10px; box-sizing: border-box; font-size: 15px; background-color: #fdfcfb; color: #4a3e3d; outline: none; transition: border 0.3s; font-family: inherit; }
+        h1 { color: #5a4b49; font-size: 24px; margin-bottom: 5px; font-weight: 600; letter-spacing: 0.5px; }
+        p { color: #7a6e67; font-size: 13px; margin-bottom: 20px; font-weight: 500; }
+        label { display: block; text-align: left; margin: 12px 0 4px; font-weight: 600; font-size: 12px; color: #5a4b49; text-transform: uppercase; letter-spacing: 0.5px; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #ebdccb; border-radius: 10px; box-sizing: border-box; font-size: 14px; background-color: #fdfcfb; color: #4a3e3d; outline: none; transition: border 0.3s; font-family: inherit; }
         input:focus, select:focus, textarea:focus { border-color: #8c7a6b; }
-        textarea { resize: none; height: 80px; }
-        .info-box { background-color: #f7f3ed; border: 1px dashed #8c7a6b; padding: 15px; border-radius: 10px; text-align: left; margin: 15px 0; font-size: 14px; }
-        .info-box p { margin: 5px 0; color: #5a4b49; }
-        .status-badge { background-color: #f0ad4e; color: white; padding: 3px 8px; border-radius: 5px; font-weight: bold; font-size: 12px; }
-        .checkbox-container { display: flex; align-items: flex-start; gap: 10px; text-align: left; margin: 20px 0; font-size: 14px; color: #5a4b49; cursor: pointer; }
-        .checkbox-container input { width: auto; margin-top: 3px; cursor: pointer; }
-        button { background-color: #25D366; color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+        textarea { resize: none; height: 60px; }
+        .info-box { background-color: #f7f3ed; border: 1px dashed #8c7a6b; padding: 12px; border-radius: 10px; text-align: left; margin: 15px 0; font-size: 13px; }
+        .info-box p { margin: 4px 0; color: #5a4b49; }
+        .status-badge { background-color: #f0ad4e; color: white; padding: 2px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
+        button { background-color: #25D366; color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
         button:hover { background-color: #128C7E; }
     </style>
 </head>
@@ -65,7 +60,7 @@
     <input type="email" id="correo" placeholder="Ej. maria@correo.com">
 
     <label for="huespedes">Número de Huéspedes:</label>
-    <select id="huespedes" onchange="actualizarResumen()">
+    <select id="huespedes">
         <option value="1 persona">1 Persona</option>
         <option value="2 personas">2 Personas</option>
         <option value="3 personas">3 Personas</option>
@@ -73,63 +68,26 @@
     </select>
 
     <label for="fecha_entrada">Fecha de Llegada (Check-in):</label>
-    <input type="date" id="fecha_entrada" onchange="calcularNoches()">
+    <input type="date" id="fecha_entrada">
 
     <label for="fecha_salida">Fecha de Salida (Check-out):</label>
-    <input type="date" id="fecha_salida" onchange="calcularNoches()">
+    <input type="date" id="fecha_salida">
 
     <label for="mensaje">Mensaje o solicitud especial:</label>
-    <textarea id="mensaje" placeholder="Ej. Hora de llegada del vuelo, cuna para bebé, etc."></textarea>
+    <textarea id="mensaje" placeholder="Ej. Alguna duda o comentario..."></textarea>
 
     <div class="info-box">
         <p><strong>Resumen de Estancia:</strong></p>
-        <p>🌙 Número de Noches: <span id="resumen_noches" style="font-weight: bold; color:#8c7a6b;">0 noches</span></p>
-        <p>👥 Número de Huéspedes: <span id="resumen_huespedes" style="font-weight: bold; color:#8c7a6b;">1 persona</span></p>
         <p>📋 Estado de Solicitud: <span class="status-badge">⏳ Pendiente</span></p>
     </div>
 
-    <label class="checkbox-container">
-        <input type="checkbox" id="aceptar_contacto">
-        <span>Acepto enviar esta solicitud y ser contactado para confirmar disponibilidad.</span>
-    </label>
-
     <button onclick="enviarWhatsApp()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://w3.org"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.451 5.42 1.453 5.443 0 9.874-4.422 9.877-9.866.002-2.637-1.019-5.117-2.877-6.979C17.204 1.9 14.733.882 12.016.882c-5.444 0-9.877 4.422-9.88 9.867a9.814 9.814 0 001.448 5.12l-.995 3.636 3.73-.978zm11.236-4.992c-.3-.15-1.774-.875-2.048-.974-.274-.1-.474-.15-.674.15-.2.3-.774.974-.95 1.174-.175.2-.351.224-.651.075-1.205-.6-2.016-1.129-2.825-2.517-.213-.363-.213-.67 0-.964.12-.156.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525C10.744 8.24 10.12 6.71 9.86 6.084c-.253-.608-.51-.525-.7-.535l-.595-.01c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.112 3.225 5.117 4.525.715.31 1.273.495 1.708.634.718.228 1.37.196 1.887.119.577-.087 1.774-.725 2.024-1.425.25-.7.25-1.3 0-1.425-.075-.125-.275-.2-.575-.35z"/></svg>
         Enviar Solicitud
     </button>
 </div>
 
 <script>
-let totalNoches = 0;
-
-function calcularNoches() {
-    const entrada = document.getElementById('fecha_entrada').value;
-    const salida = document.getElementById('fecha_salida').value;
-    
-    if (entrada && salida) {
-        const date1 = new Date(entrada);
-        const date2 = new Date(salida);
-        const diffTime = date2 - date1;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-        if (diffDays > 0) {
-            totalNoches = diffDays;
-            document.getElementById('resumen_noches').innerText = `${totalNoches} ${totalNoches === 1 ? 'noche' : 'noches'}`;
-        } else {
-            totalNoches = 0;
-            document.getElementById('resumen_noches').innerText = "Error en fechas";
-        }
-    }
-}
-
-function actualizarResumen() {
-    const cantHuespedes = document.getElementById('huespedes').value;
-    document.getElementById('resumen_huespedes').innerText = cantHuespedes;
-}
-
 function enviarWhatsApp() {
-    const numeroDePuebla = "522228630972"; 
-    
     const nombre = document.getElementById('nombre').value.trim();
     const telUsuario = document.getElementById('telefono').value.trim();
     const correo = document.getElementById('correo').value.trim();
@@ -137,98 +95,17 @@ function enviarWhatsApp() {
     const entradaInput = document.getElementById('fecha_entrada').value;
     const salidaInput = document.getElementById('fecha_salida').value;
     const msgEspecial = document.getElementById('mensaje').value.trim() || "Ninguno";
-    const acepto = document.getElementById('aceptar_contacto').checked;
 
     if(!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
-        alert("Por favor, llena todos los campos obligatorios del formulario.");
+        alert("Por favor, llena todos los campos del formulario.");
         return;
     }
+
+    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Huésped:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entradaInput)}%0A📆 *Salida:* ${encodeURIComponent(salidaInput)}%0A💬 *Nota:* ${encodeURIComponent(msgEspecial)}%0A%0A📋 *Estado:* ⏳ PENDIENTE`;
     
-    if (totalNoches <= 0) {
-        alert("La fecha de salida debe ser después de la fecha de llegada.");
-        return;
-    }
-
-    if(!acepto) {
-        alert("Debes marcar la casilla para aceptar ser contactado y confirmar disponibilidad.");
-        return;
-    }
-
-    const fEntrada = new Date(entradaInput + "T00:00:00").toLocaleDateString('es-MX', {year: 'numeric', month: 'long', day: 'numeric'});
-    const fSalida = new Date(salidaInput + "T00:00:00").toLocaleDateString('es-MX', {year: 'numeric', month: 'long', day: 'numeric'});
-
-    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva para el departamento:%0A%0A👤 *Solicitante:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Fecha de Entrada:* ${encodeURIComponent(fEntrada)}%0A📆 *Fecha de Salida:* ${encodeURIComponent(fSalida)}%0A🌙 *Total de Noches:* ${totalNoches}%0A💬 *Solicitud Especial:* ${encodeURIComponent(msgEspecial)}%0A%0A📋 *Estado de la Solicitud:* ⏳ PENDIENTE`;
-    const url = `https://wa.me` + numeroDePuebla + `?text=` + texto;
-    
-    window.open(url, '_blank');
+    window.location.href = `https://whatsapp.com{texto}`;
 }
 </script>
 
 </body>
 </html>
-    <title>Arcella Relaxing | Reservas de Departamento</title>
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #faf6f0; color: #4a3e3d; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(140, 122, 107, 0.1); max-width: 440px; width: 100%; text-align: center; border: 1px solid #ebdccb; box-sizing: border-box; }
-        h1 { color: #8c7a6b; font-size: 26px; margin-bottom: 5px; font-weight: 500; letter-spacing: 0.5px; }
-        p { color: #9c8e85; font-size: 14px; margin-bottom: 25px; }
-        label { display: block; text-align: left; margin: 14px 0 6px; font-weight: 600; font-size: 13px; color: #6e5d53; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 10px; border: 1px solid #ebdccb; border-radius: 10px; box-sizing: border-box; font-size: 15px; background-color: #fdfcfb; color: #4a3e3d; outline: none; transition: border 0.3s; font-family: inherit; }
-        input:focus, select:focus, textarea:focus { border-color: #8c7a6b; }
-        textarea { resize: none; height: 80px; }
-        .info-box { background-color: #f7f3ed; border: 1px dashed #8c7a6b; padding: 15px; border-radius: 10px; text-align: left; margin: 15px 0; font-size: 14px; }
-        .info-box p { margin: 5px 0; color: #5a4b49; }
-        .status-badge { background-color: #f0ad4e; color: white; padding: 3px 8px; border-radius: 5px; font-weight: bold; font-size: 12px; }
-        .checkbox-container { display: flex; align-items: flex-start; gap: 10px; text-align: left; margin: 20px 0; font-size: 14px; color: #6e5d53; cursor: pointer; }
-        .checkbox-container input { width: auto; margin-top: 3px; cursor: pointer; }
-        button { background-color: #25D366; color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); }
-        button:hover { background-color: #128C7E; }
-    </style>
-</head>
-<body>
-
-<div class="card">
-    <h1>Arcella Relaxing</h1>
-    <p>Solicitud de Reserva de Departamento</p>
-    
-    <label for="nombre">Nombre Completo:</label>
-    <input type="text" id="nombre" placeholder="Ej. María López">
-
-    <label for="telefono">Teléfono / WhatsApp:</label>
-    <input type="tel" id="telefono" placeholder="Ej. 2221234567">
-
-    <label for="correo">Correo Electrónico:</label>
-    <input type="email" id="correo" placeholder="Ej. maria@correo.com">
-
-    <label for="huespedes">Número de Huéspedes:</label>
-    <select id="huespedes" onchange="actualizarResumen()">
-        <option value="1 persona">1 Persona</option>
-        <option value="2 personas">2 Personas</option>
-        <option value="3 personas">3 Personas</option>
-        <option value="4 personas">4 Personas</option>
-    </select>
-
-    <label for="fecha_entrada">Fecha de Llegada (Check-in):</label>
-    <input type="date" id="fecha_entrada" onchange="calcularNoches()">
-
-    <label for="fecha_salida">Fecha de Salida (Check-out):</label>
-    <input type="date" id="fecha_salida" onchange="calcularNoches()">
-
-    <label for="mensaje">Mensaje o solicitud especial:</label>
-    <textarea id="mensaje" placeholder="Ej. Hora de llegada del vuelo, cuna para bebé, etc."></textarea>
-
-    <!-- CUADRO DE RESUMEN AUTOMÁTICO -->
-    <div class="info-box">
-        <p><strong>Resumen de Estancia:</strong></p>
-        <p>🌙 Número de Noches: <span id="resumen_noches" style="font-weight: bold; color:#8c7a6b;">0 noches</span></p>
-        <p>👥 Número de Huéspedes: <span id="resumen_huespedes" style="font-weight: bold; color:#8c7a6b;">1 persona</span></p>
-        <p>📋 Estado de Solicitud: <span class="status-badge">⏳ Pendiente</span></p>
-    </div>
-
-    <label class="checkbox-container">
-        <input type="checkbox" id="aceptar_contacto">
-        <span>Acepto enviar esta solicitud y ser contactado para confirmar disponibilidad.</span>
-    </label>
-
-    <button onclick="enviarWhatsApp()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://w3.org"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.451 5.42 1.453 5.443 0 9.874-4.422 9.877-9.866.002-2.637-1.019-5.117-2.877-6.979C17.204 1.9 14.733.882 12.016.882c-5.444 0-9.877 4.422-9.88 9.867a9.814 9.814 0 001.448 5.12l-.995 3.636 3.73-.978zm11.236-4.992c-.3-.15-1.774-.875-2.048-.974-.274-.1-.474-.15-.674.15-.2.3-.774.974-.95 1.174-.175.2-.351.224-.651.075-1.205-.6-2.016-1.129-2.825-2.517-.213-.363-.213-.67 0-.964.12-.156.3-.35.45-.525.15-.175.2-.3.3-.5s.05-.375-.025-.525C10.744 8.24 10.12 6.71 9.86 6.084c-.253-.608-.51-.525-.7-.535l-.595-.01c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.112 3.225 5.117 
