@@ -5,60 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcella Relaxing | Reservas</title>
     <style>
-        body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            background-image: url('https://unsplash.com'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #4a3e3d; 
-            margin: 0; 
-            8padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-        }
-        .card { 
-            background: rgba(255, 255, 255, 0.96); 
-            padding: 25px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
-            max-width: 400px; 
-            width: 100%; 
-            text-align: center; 
-            border: 1px solid #ebdccb; 
-            box-sizing: border-box; 
-            margin: 10px auto;
-        }
-        h1 { color: #5a4b49; font-size: 24px; margin-bottom: 5px; font-weight: 600; letter-spacing: 0.5px; }
-        p { color: #7a6e67; font-size: 13px; margin-bottom: 20px; font-weight: 500; }
-        label { display: block; text-align: left; margin: 12px 0 4px; font-weight: 600; font-size: 12px; color: #5a4b49; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #ebdccb; border-radius: 10px; box-sizing: border-box; font-size: 14px; background-color: #fdfcfb; color: #4a3e3d; outline: none; transition: border 0.3s; font-family: inherit; }
-        input:focus, select:focus, textarea:focus { border-color: #8c7a6b; }
-        textarea { resize: none; height: 60px; }
-        .info-box { background-color: #f7f3ed; border: 1px dashed #8c7a6b; padding: 12px; border-radius: 10px; text-align: left; margin: 15px 0; font-size: 13px; }
-        .info-box p { margin: 4px 0; color: #5a4b49; }
-        .status-badge { background-color: #f0ad4e; color: white; padding: 2px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
-        button { background-color: #25D366; color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+        body { font-family: Arial, sans-serif; background-color: #f7f3ed; color: #4a3e3d; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; width: 100%; text-align: center; border: 1px solid #ebdccb; box-sizing: border-box; }
+        h1 { color: #5a4b49; font-size: 24px; margin-bottom: 5px; }
+        p { color: #7a6e67; font-size: 14px; margin-bottom: 20px; }
+        label { display: block; text-align: left; margin: 12px 0 4px; font-weight: bold; font-size: 12px; color: #5a4b49; text-transform: uppercase; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #ebdccb; border-radius: 8px; box-sizing: border-box; font-size: 14px; background-color: #fdfcfb; }
+        textarea { resize: none; height: 70px; }
+        button { background-color: #25D366; color: white; border: none; padding: 14px; width: 100%; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.2); }
         button:hover { background-color: #128C7E; }
     </style>
 </head>
 <body>
-
 <div class="card">
     <h1>Arcella Relaxing</h1>
     <p>Solicitud de Reserva de Departamento</p>
-    
     <label for="nombre">Nombre Completo:</label>
     <input type="text" id="nombre" placeholder="Ej. María López">
-
     <label for="telefono">Teléfono / WhatsApp:</label>
     <input type="tel" id="telefono" placeholder="Ej. 2221234567">
-
     <label for="correo">Correo Electrónico:</label>
     <input type="email" id="correo" placeholder="Ej. maria@correo.com">
-
     <label for="huespedes">Número de Huéspedes:</label>
     <select id="huespedes">
         <option value="1 persona">1 Persona</option>
@@ -66,39 +33,32 @@
         <option value="3 personas">3 Personas</option>
         <option value="4 personas">4 Personas</option>
     </select>
-
     <label for="fecha_entrada">Fecha de Llegada (Check-in):</label>
     <input type="date" id="fecha_entrada">
-
     <label for="fecha_salida">Fecha de Salida (Check-out):</label>
     <input type="date" id="fecha_salida">
-
     <label for="mensaje">Mensaje o solicitud especial:</label>
-    <textarea id="mensaje" placeholder="Ej. Alguna duda o comentario..."></textarea>
-
-    <div class="info-box">
-        <p><strong>Resumen de Estancia:</strong></p>
-        <p>📋 Estado de Solicitud: <span class="status-badge">⏳ Pendiente</span></p>
-    </div>
-
-    <button onclick="enviarWhatsApp()">
-        Enviar Solicitud
-    </button>
+    <textarea id="mensaje" placeholder="Ej. Hora de llegada..."></textarea>
+    <button onclick="enviarWhatsApp()">Enviar Solicitud por WhatsApp</button>
 </div>
-
 <script>
 function enviarWhatsApp() {
+    const numeroDePuebla = "522228630972"; 
     const nombre = document.getElementById('nombre').value.trim();
     const telUsuario = document.getElementById('telefono').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const cantHuespedes = document.getElementById('huespedes').value;
-    const entradaInput = document.getElementById('fecha_entrada').value;
-    const salidaInput = document.getElementById('fecha_salida').value;
+    const entrada = document.getElementById('fecha_entrada').value;
+    const salida = document.getElementById('fecha_salida').value;
     const msgEspecial = document.getElementById('mensaje').value.trim() || "Ninguno";
-
-    if(!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
-        alert("Por favor, llena todos los campos del formulario.");
+    if(!nombre || !telUsuario || !correo || !entrada || !salida) {
+        alert("Por favor, llena todos los campos obligatorios.");
         return;
     }
-
-    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Huésped:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entradaInput)}%0A📆 *Salida:* ${encodeURIComponent(salidaInput)}%0A💬 *Nota:*
+    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Nombre:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entrada)}%0A📆 *Salida:* ${encodeURIComponent(salida)}%0A💬 *Nota:* ${encodeURIComponent(msgEspecial)}`;
+    const url = `https://wa.me` + numeroDePuebla + `?text=` + texto;
+    window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
