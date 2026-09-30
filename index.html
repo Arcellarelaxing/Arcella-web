@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ñ<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -155,7 +155,7 @@ function enviarWhatsApp() {
 
     const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva para el departamento:%0A%0A👤 *Solicitante:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Fecha de Entrada:* ${encodeURIComponent(fEntrada)}%0A📆 *Fecha de Salida:* ${encodeURIComponent(fSalida)}%0A🌙 *Total de Noches:* ${totalNoches}%0A💬 *Solicitud Especial:* ${encodeURIComponent(msgEspecial)}%0A%0A📋 *Estado de la Solicitud:* ⏳ PENDIENTE`;
     
-    const url = `https://wa.me` + numeroDePuebla + `?text=` + texto;
+    const url = `https://wa.me{numeroDePuebla}?text=${texto}`;
     
     window.open(url, '_blank');
 }
