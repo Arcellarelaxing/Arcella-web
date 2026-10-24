@@ -135,10 +135,9 @@ function enviarWhatsApp() {
     const msgEspecial = document.getElementById('mensaje').value.trim() || "Ninguno";
     const acepto = document.getElementById('aceptar_contacto').checked;
 
-    if(!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
-        alert("Por favor, llena todos los campos obligatorios del formulario.");
-        return;
-    }
+if (!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
+    alert("Por favor, llena todos los campos obligatorios del formulario.");
+    return;
     
     if (totalNoches <= 0) {
         alert("La fecha de salida debe ser después de la fecha de llegada.");
