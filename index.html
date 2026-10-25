@@ -1,104 +1,108 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcella Relaxing | Reservas</title>
+    <title>Arcella Relaxing | Reservaciones</title>
     <style>
-        body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            background-image: url('https://unsplash.com'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #4a3e3d; 
-            margin: 0; 
-            8padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            outline: none; border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
         }
-        .card { 
-            background: rgba(255, 255, 255, 0.96); 
-            padding: 25px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
-            max-width: 400px; 
-            width: 100%; 
-            text-align: center; 
-            border: 1px solid #ebdccb; 
-            box-sizing: border-box; 
-            margin: 10px auto;
+        body {
+            background: #fff;
+            font-family: 'Poppins', sans-serif;
         }
-        h1 { color: #5a4b49; font-size: 24px; margin-bottom: 5px; font-weight: 600; letter-spacing: 0.5px; }
-        p { color: #7a6e67; font-size: 13px; margin-bottom: 20px; font-weight: 500; }
-        label { display: block; text-align: left; margin: 12px 0 4px; font-weight: 600; font-size: 12px; color: #5a4b49; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 8px; border: 1px solid #ebdccb; border-radius: 10px; box-sizing: border-box; font-size: 14px; background-color: #fdfcfb; color: #4a3e3d; outline: none; transition: border 0.3s; font-family: inherit; }
-        input:focus, select:focus, textarea:focus { border-color: #8c7a6b; }
-        textarea { resize: none; height: 60px; }
-        .info-box { background-color: #f7f3ed; border: 1px dashed #8c7a6b; padding: 12px; border-radius: 10px; text-align: left; margin: 15px 0; font-size: 13px; }
-        .info-box p { margin: 4px 0; color: #5a4b49; }
-        .status-badge { background-color: #f0ad4e; color: white; padding: 2px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
-        button { background-color: #25D366; color: white; border: none; padding: 16px; width: 100%; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
-        button:hover { background-color: #128C7E; }
+        .heading {
+            text-align: center;
+            padding-bottom: 2rem;
+            color: #333;
+            font-size: 3rem;
+        }
+        .heading span {
+            color: #d1a3a4;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #d1a3a4;
+            color: #fff;
+            padding: .6rem 2.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+        }
+        .btn:hover {
+            background: #333;
+        }
+        .book .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .book .row .image {
+            flex: 1 1 40rem;
+        }
+        .book .row .image img {
+            width: 100%;
+        }
+        .book .row form {
+            flex: 1 1 40rem;
+            padding: 2rem;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            border-radius: .5rem;
+            border: .1rem solid rgba(0,0,0,.1);
+        }
+        .book .row form .box {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+            margin: .6rem 0;
+            border: .1rem solid rgba(0,0,0,.1);
+            border-radius: .5rem;
+            background: #f7f7f7;
+        }
+        .book .row form .box:focus {
+            border-color: #d1a3a4;
+        }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h1>Arcella Relaxing</h1>
-    <p>Solicitud de Reserva de Departamento</p>
-    
-    <label for="nombre">Nombre Completo:</label>
-    <input type="text" id="nombre" placeholder="Ej. María López">
+<!-- Sección de reservaciones corregida para Netlify -->
+<section class="book" id="book">
 
-    <label for="telefono">Teléfono / WhatsApp:</label>
-    <input type="tel" id="telefono" placeholder="Ej. 2221234567">
+    <h1 class="heading"> <span>Reserve</span> su espacio </h1>    
 
-    <label for="correo">Correo Electrónico:</label>
-    <input type="email" id="correo" placeholder="Ej. maria@correo.com">
+    <div class="row">
+        <form name="reservaciones" method="POST" data-netlify="true">
+            
+            <input type="text" name="nombre" placeholder="Nombre completo" class="box" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" class="box" required>
+            <input type="number" name="telefono" placeholder="Número de teléfono" class="box" required>
+            <input type="date" name="fecha" class="box" required>
+            <input type="time" name="hora" class="box" required>
 
-    <label for="huespedes">Número de Huéspedes:</label>
-    <select id="huespedes">
-        <option value="1 persona">1 Persona</option>
-        <option value="2 personas">2 Personas</option>
-        <option value="3 personas">3 Personas</option>
-        <option value="4 personas">4 Personas</option>
-    </select>
+            <select name="servicio" class="box" required>
+                <option value="" disabled selected>Seleccione el Servicio</option>
+                <option value="facial">Tratamiento Facial</option>
+                <option value="masaje">Masaje Relajante</option>
+                <option value="corporal">Tratamiento Corporal</option>
+            </select>
 
-    <label for="fecha_entrada">Fecha de Llegada (Check-in):</label>
-    <input type="date" id="fecha_entrada">
+            <button type="submit" class="btn">Solicitar Reservacion</button>
 
-    <label for="fecha_salida">Fecha de Salida (Check-out):</label>
-    <input type="date" id="fecha_salida">
-
-    <label for="mensaje">Mensaje o solicitud especial:</label>
-    <textarea id="mensaje" placeholder="Ej. Alguna duda o comentario..."></textarea>
-
-    <div class="info-box">
-        <p><strong>Resumen de Estancia:</strong></p>
-        <p>📋 Estado de Solicitud: <span class="status-badge">⏳ Pendiente</span></p>
+        </form>
     </div>
 
-    <button onclick="enviarWhatsApp()">
-        Enviar Solicitud
-    </button>
-</div>
+</section>
 
-<script>
-function enviarWhatsApp() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const telUsuario = document.getElementById('telefono').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-    const cantHuespedes = document.getElementById('huespedes').value;
-    const entradaInput = document.getElementById('fecha_entrada').value;
-    const salidaInput = document.getElementById('fecha_salida').value;
-    const msgEspecial = document.getElementById('mensaje').value.trim() || "Ninguno";
-
-    if(!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
-        alert("Por favor, llena todos los campos del formulario.");
-        return;
-    }
-
-    const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva:%0A%0A👤 *Huésped:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Entrada:* ${encodeURIComponent(entradaInput)}%0A📆 *Salida:* ${encodeURIComponent(salidaInput)}%0A💬 *Nota:*
+</body>
+</html>
