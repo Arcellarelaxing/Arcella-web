@@ -1,108 +1,200 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcella Relaxing | Reservaciones</title>
+    <title>Arcella Relaxing | Alojamiento Vacacional</title>
     <style>
-        * {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-            outline: none; border: none;
-            text-decoration: none;
-            text-transform: capitalize;
-            transition: .2s linear;
+        /* Paleta de colores: Mostaza elegante, calma y confort */
+        :root {
+            --color-mostaza: #E5A93C;
+            --color-relax: #34495E;
+            --color-fondo: #F9F9FB;
+            --color-texto: #2C3E50;
         }
+
         body {
-            background: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
         }
-        .heading {
+
+        header {
+            background-color: var(--color-mostaza);
+            color: white;
+            padding: 2.5rem 1rem;
             text-align: center;
-            padding-bottom: 2rem;
-            color: #333;
-            font-size: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
-        .heading span {
-            color: #d1a3a4;
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            background: #d1a3a4;
-            color: #fff;
-            padding: .6rem 2.5rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            border-radius: .5rem;
-        }
-        .btn:hover {
-            background: #333;
-        }
-        .book .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            align-items: center;
-        }
-        .book .row .image {
-            flex: 1 1 40rem;
-        }
-        .book .row .image img {
-            width: 100%;
-        }
-        .book .row form {
-            flex: 1 1 40rem;
-            padding: 2rem;
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-            border-radius: .5rem;
-            border: .1rem solid rgba(0,0,0,.1);
-        }
-        .book .row form .box {
-            width: 100%;
-            padding: 1rem;
+
+        header p {
+            margin: 0.5rem 0 0 0;
             font-size: 1.2rem;
-            color: #333;
-            margin: .6rem 0;
-            border: .1rem solid rgba(0,0,0,.1);
-            border-radius: .5rem;
-            background: #f7f7f7;
+            font-style: italic;
+            opacity: 0.9;
         }
-        .book .row form .box:focus {
-            border-color: #d1a3a4;
+
+        nav {
+            background-color: var(--color-relax);
+            text-align: center;
+            padding: 0.8rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-mostaza);
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero {
+            background: white;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: var(--color-relax);
+            margin-top: 0;
+        }
+
+        .btn-reserva {
+            display: inline-block;
+            background-color: var(--color-mostaza);
+            color: white;
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 12px rgba(229, 169, 60, 0.3);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-reserva:hover {
+            background-color: #d4952b;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--color-relax);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            flex: 1;
+            min-width: 280px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border-top: 5px solid var(--color-mostaza);
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color: var(--color-relax);
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: var(--color-relax);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 5rem;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
         }
     </style>
 </head>
 <body>
 
-<!-- Sección de reservaciones corregida para Netlify -->
-<section class="book" id="book">
+    <header>
+        <h1>Arcella Relaxing</h1>
+        <p>Tu espacio de desconexión y confort absoluto</p>
+    </header>
 
-    <h1 class="heading"> <span>Reserve</span> su espacio </h1>    
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#experiencia">Tu Estancia</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-    <div class="row">
-        <form name="reservaciones" method="POST" data-netlify="true">
-            
-            <input type="text" name="nombre" placeholder="Nombre completo" class="box" required>
-            <input type="email" name="correo" placeholder="Correo electrónico" class="box" required>
-            <input type="number" name="telefono" placeholder="Número de teléfono" class="box" required>
-            <input type="date" name="fecha" class="box" required>
-            <input type="time" name="hora" class="box" required>
+    <div class="container" id="inicio">
+        <!-- Presentación Principal -->
+        <section class="hero">
+            <h2>El destino ideal para relajarte</h2>
+            <p>Bienvenido a Arcella Relaxing. Nos encargamos de diseñar un entorno de paz y comodidad absoluta para que disfrutes de tus días de descanso. Vive una experiencia inolvidable hospedándote con nosotros.</p>
+            <!-- Reemplaza el enlace de abajo por tu link de Airbnb, Booking o WhatsApp -->
+            <a href="https://wa.me" class="btn-reserva" target="_blank">Consultar Disponibilidad</a>
+        </section>
 
-            <select name="servicio" class="box" required>
-                <option value="" disabled selected>Seleccione el Servicio</option>
-                <option value="facial">Tratamiento Facial</option>
-                <option value="masaje">Masaje Relajante</option>
-                <option value="corporal">Tratamiento Corporal</option>
-            </select>
-
-            <button type="submit" class="btn">Solicitar Reservacion</button>
-
-        </form>
+        <!-- Características del Alojamiento -->
+        <h2 id="experiencia" class="section-title">¿Qué te espera en Arcella Relaxing?</h2>
+        <section class="features">
+            <div class="feature-card">
+                <h3>✨ Confort Absoluto</h3>
+                <p>Habitaciones totalmente preparadas, camas premium y un diseño pensado exclusivamente para tu descanso físico y mental.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌿 Ambiente Relajante</h3>
+                <p>Espacios silenciosos, armónicos y perfectos para desconectarse de la rutina diaria y recargar energías.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔑 Todo Equipado</h3>
+                <p>Conectividad Wifi de alta velocidad, áreas climatizadas y todos los servicios esenciales para que no te falte nada.</p>
+            </div>
+        </section>
     </div>
 
-</section>
+    <!-- Pie de página y Contacto -->
+    <footer id="contacto">
+        <p><strong>Arcella Relaxing</strong> &copy; 2026 - Alojamiento Vacacional</p>
+        <p>✉️ reservas@arcellarelaxing.com | 📞 Tel: +XX XXX XXX XXX</p>
+    </footer>
 
 </body>
 </html>
