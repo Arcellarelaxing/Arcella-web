@@ -1,4 +1,4 @@
-ñ<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -135,9 +135,10 @@ function enviarWhatsApp() {
     const msgEspecial = document.getElementById('mensaje').value.trim() || "Ninguno";
     const acepto = document.getElementById('aceptar_contacto').checked;
 
-if (!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
-    alert("Por favor, llena todos los campos obligatorios del formulario.");
-    return;
+    if(!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
+        alert("Por favor, llena todos los campos obligatorios del formulario.");
+        return;
+    }
     
     if (totalNoches <= 0) {
         alert("La fecha de salida debe ser después de la fecha de llegada.");
@@ -154,7 +155,7 @@ if (!nombre || !telUsuario || !correo || !entradaInput || !salidaInput) {
 
     const texto = `¡Hola Arcella Relaxing! 🏢✨%0AMe gustaría solicitar una reserva para el departamento:%0A%0A👤 *Solicitante:* ${encodeURIComponent(nombre)}%0A📞 *Teléfono:* ${encodeURIComponent(telUsuario)}%0A✉️ *Correo:* ${encodeURIComponent(correo)}%0A👥 *Huéspedes:* ${encodeURIComponent(cantHuespedes)}%0A📅 *Fecha de Entrada:* ${encodeURIComponent(fEntrada)}%0A📆 *Fecha de Salida:* ${encodeURIComponent(fSalida)}%0A🌙 *Total de Noches:* ${totalNoches}%0A💬 *Solicitud Especial:* ${encodeURIComponent(msgEspecial)}%0A%0A📋 *Estado de la Solicitud:* ⏳ PENDIENTE`;
     
-    const url = `https://wa.me{numeroDePuebla}?text=${texto}`;
+    const url = `https://wa.me` + numeroDePuebla + `?text=` + texto;
     
     window.open(url, '_blank');
 }
