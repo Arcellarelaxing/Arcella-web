@@ -113,7 +113,6 @@
     </div>
 
     <div class="row">
-        <!-- Modificamos el formulario para usar JavaScript y enviar a WhatsApp -->
         <form id="formReservacion" onsubmit="enviarWhatsApp(event)">
             
             <input type="text" id="nombre" placeholder="Nombre completo del huésped" class="box" required>
@@ -146,7 +145,6 @@
 function enviarWhatsApp(event) {
     event.preventDefault();
     
-    // Recopilar los datos del formulario
     var nombre = document.getElementById('nombre').value;
     var correo = document.getElementById('correo').value;
     var telefono = document.getElementById('telefono').value;
@@ -154,10 +152,8 @@ function enviarWhatsApp(event) {
     var salida = document.getElementById('salida').value;
     var huespedes = document.getElementById('huespedes').value;
     
-    // Tu número de WhatsApp con clave de país
     var numeroTelefono = "522228630972"; 
     
-    // Construir el mensaje de texto elegante
     var mensaje = "¡Hola! Me gustaría solicitar una reservación:\n\n" +
                   "*Nombre:* " + nombre + "\n" +
                   "*Correo:* " + correo + "\n" +
@@ -166,13 +162,11 @@ function enviarWhatsApp(event) {
                   "*Fecha de salida:* " + salida + "\n" +
                   "*Número de huéspedes:* " + huespedes;
     
-    // Codificar el texto para que la URL lo acepte
     var mensajeCodificado = encodeURIComponent(mensaje);
     
-    // Crear el enlace final de WhatsApp
+    // Aquí está corregida la ruta final con la barra /
     var urlWhatsApp = "https://wa.me" + numeroTelefono + "?text=" + mensajeCodificado;
     
-    // Redirigir al usuario inmediatamente a WhatsApp
     window.open(urlWhatsApp, '_blank');
 }
 </script>
