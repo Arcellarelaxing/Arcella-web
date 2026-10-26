@@ -191,7 +191,8 @@ function enviarWhatsApp(event) {
     var huespedes = document.getElementById('huespedes').value;
     var mensajeEspecial = document.getElementById('mensaje').value;
     
-    var numeroTelefono = "522228630972"; 
+    // AQUÍ AGREGASE EL + DEL FORMATO INTERNACIONAL CORRECTAMENTE
+    var numeroTelefono = "+522228630972"; 
     
     var mensaje = "¡Hola! Me gustaría solicitar una estancia:\n\n" +
                   "*Nombre:* " + nombre + "\n" +
