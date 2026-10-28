@@ -1,223 +1,190 @@
-8<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcella Relaxing | Reservaciones</title>
-    <!-- Iconos para el teléfono -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        * {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-            outline: none; border: none;
-            text-decoration: none;
-            transition: .2s linear;
-        }
-        body {
-            background: #0a1931;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-        .container {
-            width: 100%;
-            max-width: 450px;
-            background: #ffffff;
-            padding: 2.5rem 2rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 1rem 3rem rgba(0,0,0,0.3);
-            position: relative;
-        }
-        .close-btn {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 1.5rem;
-            color: #333;
-            cursor: pointer;
-        }
-        .tag {
-            color: #005086;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .heading {
-            color: #0a1931;
-            font-size: 2.4rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-        }
-        .subheading {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 2rem;
-        }
-        label {
-            display: block;
-            font-size: 0.9rem;
-            color: #0a1931;
-            font-weight: 600;
-            margin-top: 1.2rem;
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .box {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.1rem;
-            color: #333;
-            background: #f4f6f9;
-            border: 2px solid transparent;
-            border-radius: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-        .box:focus {
-            border-color: #005086;
-            background: #fff;
-        }
-        .checkbox-container {
-            display: flex;
-            align-items: flex-start;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            gap: 0.8rem;
-            cursor: pointer;
-        }
-        .checkbox-container input {
-            margin-top: 0.3rem;
-            transform: scale(1.2);
-        }
-        .checkbox-container span {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.4;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            background: #005086;
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 1.2rem;
-            border-radius: 0.8rem;
-            cursor: pointer;
-            text-align: center;
-            box-shadow: 0 0.5rem 1.5rem rgba(0, 80, 134, 0.3);
-        }
-        .btn:hover {
-            background: #0a1931;
-        }
-        .footer-text {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 1.2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcella Relaxing | Reservaciones</title>
+<style>
+:root {
+  --mar: #159eaa;
+  --oscuro: #087681;
+  --fondo: #effbfb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 18px 12px;
+  font-family: Arial, sans-serif;
+  color: #24484b;
+  background: linear-gradient(180deg, #d9f5f4, #fff);
+}
+main {
+  max-width: 440px;
+  margin: auto;
+  padding: 22px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 5px 22px #08768120;
+}
+h1 {
+  margin: 0;
+  color: var(--oscuro);
+  text-align: center;
+  font-size: 27px;
+}
+.subtitulo {
+  text-align: center;
+  color: #59888a;
+  margin: 8px 0 20px;
+}
+label {
+  display: block;
+  margin: 12px 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+input, select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #b8dddd;
+  border-radius: 9px;
+  background: var(--fondo);
+  color: #24484b;
+  font-size: 16px;
+}
+.fechas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--mar);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:active { background: var(--oscuro); }
+.nota {
+  text-align: center;
+  font-size: 12px;
+  color: #628487;
+  margin: 14px 0 0;
+}
+</style>
 </head>
 <body>
+<main>
+  <h1>Arcella Relaxing</h1>
+  <p class="subtitulo">🌊 Tu espacio de descanso en Playa del Carmen</p>
 
-<div class="container">
-    <div class="close-btn"><i class="fas fa-times"></i></div>
-    
-    <span class="tag">Reserva Directa</span>
-    <h1 class="heading">Solicita tu estancia</h1>
-    <p class="subheading">Completa tus datos y la solicitud quedará registrada para confirmar disponibilidad.</p>
+  <form id="reserva">
+    <label for="nombre">Nombre completo</label>
+    <input id="nombre" required autocomplete="name"
+      placeholder="Tu nombre">
 
-    <form id="formReservacion" onsubmit="enviarWhatsApp(event)">
-        
-        <label for="llegada">Fecha de Llegada</label>
-        <input type="date" id="llegada" class="box" required>
-        
-        <label for="salida">Fecha de Salida</label>
-        <input type="date" id="salida" class="box" required>
+    <label for="correo">Correo electrónico</label>
+    <input id="correo" type="email" required
+      autocomplete="email" placeholder="Tu correo">
 
-        <label for="huespedes">Huéspedes</label>
-        <select id="huespedes" class="box" required>
-            <option value="" disabled selected>Selecciona cantidad</option>
-            <option value="1 huésped">1 huésped</option>
-            <option value="2 huéspedes">2 huéspedes</option>
-            <option value="3 huéspedes">3 huéspedes</option>
-            <option value="4 huéspedes">4 huéspedes</option>
-            <option value="5+ huéspedes">5 o más huéspedes</option>
-        </select>
+    <label for="telefono">Teléfono</label>
+    <input id="telefono" type="tel" required
+      autocomplete="tel" placeholder="Tu teléfono">
 
-        <label for="nombre">Nombre Completo</label>
-        <input type="text" id="nombre" placeholder="Tu nombre y apellido" class="box" required>
+    <div class="fechas">
+      <div>
+        <label for="llegada">Entrada</label>
+        <input id="llegada" type="date" required>
+      </div>
+      <div>
+        <label for="salida">Salida</label>
+        <input id="salida" type="date" required>
+      </div>
+    </div>
 
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" id="correo" placeholder="ejemplo@correo.com" class="box" required>
+    <label for="huespedes">Número de huéspedes</label>
+    <select id="huespedes" required>
+      <option value="">Selecciona</option>
+      <option value="1">1 huésped</option>
+      <option value="2">2 huéspedes</option>
+      <option value="3">3 huéspedes</option>
+      <option value="4">4 huéspedes</option>
+    </select>
 
-        <label for="telefono">Teléfono / WhatsApp</label>
-        <input type="number" id="telefono" placeholder="Número de contacto" class="box" required>
+    <button type="submit">Solicitar reservación por WhatsApp</button>
+  </form>
 
-        <label for="mensaje">Mensaje o solicitud especial</label>
-        <input type="text" id="mensaje" placeholder="Quiero hospedarme..." class="box">
-
-        <label class="checkbox-container">
-            <input type="checkbox" required checked>
-            <span>Acepto enviar esta solicitud y ser contactado para confirmar disponibilidad.</span>
-        </label>
-
-        <button type="submit" class="btn">Enviar solicitud →</button>
-
-        <p class="footer-text">Las solicitudes se envían directamente a tu WhatsApp.</p>
-
-    </form>
-</div>
+  <p class="nota">Tu descanso comienza aquí · Arcella Relaxing</p>
+</main>
 
 <script>
+const formulario = document.getElementById('reserva');
+const llegada = document.getElementById('llegada');
+const salida = document.getElementById('salida');
 
-function enviarWhatsApp(event) {
-    event.preventDefault();
+const hoy = new Date();
+const fechaLocal = new Date(
+  hoy.getTime() - hoy.getTimezoneOffset() * 60000
+).toISOString().slice(0, 10);
 
-    var nombre = document.getElementById('nombre').value.trim();
-    var correo = document.getElementById('correo').value.trim();
-    var telefono = document.getElementById('telefono').value.trim();
-    var llegada = document.getElementById('llegada').value;
-    var salida = document.getElementById('salida').value;
-    var huespedes = document.getElementById('huespedes').value;
-    var mensajeEspecial = document.getElementById('mensaje').value.trim();
+llegada.min = fechaLocal;
+salida.min = fechaLocal;
 
-    if (salida <= llegada) {
-        alert("La fecha de salida debe ser posterior a la fecha de llegada.");
-        return;
-    }
+llegada.addEventListener('change', function () {
+  salida.min = llegada.value || fechaLocal;
+  if (salida.value && salida.value <= llegada.value) {
+    salida.value = '';
+  }
+});
 
-    // Número de WhatsApp de contacto, con código de país.
-    // Sustituye este número si no es el correcto.
-    var numeroTelefono = "522228630972";
+formulario.addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    var mensaje =
-        "¡Hola! Me gustaría solicitar una estancia en Arcella Relaxing:\n\n" +
-        "Nombre: " + nombre + "\n" +
-        "Correo: " + correo + "\n" +
-        "Teléfono: " + telefono + "\n" +
-        "Fecha de llegada: " + llegada + "\n" +
-        "Fecha de salida: " + salida + "\n" +
-        "Huéspedes: " + huespedes + "\n" +
-        "Mensaje especial: " + mensajeEspecial;
+  if (salida.value <= llegada.value) {
+    alert('La salida debe ser posterior a la entrada.');
+    return;
+  }
 
-    var urlWhatsApp =
-        "https://wa.me/" + numeroTelefono +
-        "?text=" + encodeURIComponent(mensaje);
+  const nombre = document.getElementById('nombre').value.trim();
+  const correo = document.getElementById('correo').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const huespedes = document.getElementById('huespedes').value;
 
-    window.location.href = urlWhatsApp;
-}
+  const mensaje =
+    'SOLICITUD DE RESERVACIÓN - ARCELLA RELAXING\n\n' +
+    'Nombre: ' + nombre + '\n' +
+    'Correo: ' + correo + '\n' +
+    'Teléfono: ' + telefono + '\n' +
+    'Fecha de entrada: ' + llegada.value + '\n' +
+    'Fecha de salida: ' + salida.value + '\n' +
+    'Huéspedes: ' + huespedes + '\n\n' +
+    'Hola, quisiera consultar la disponibilidad.';
+
+  /*
+   * IMPORTANTE:
+   * Aquí debe ir el número de WhatsApp que ya te funcionó,
+   * con código de país y solo números, sin + ni espacios.
+   */
+  const numeroWhatsApp = 'PEGA_AQUI_TU_NUMERO';
+
+  if (!/^\d+$/.test(numeroWhatsApp)) {
+    alert('Falta configurar el número de WhatsApp en el código.');
+    return;
+  }
+
+  const url = 'https://wa.me/' + numeroWhatsApp +
+    '?text=' + encodeURIComponent(mensaje);
+
+  window.open(url, '_blank');
+});
 </script>
-
 </body>
 </html>
